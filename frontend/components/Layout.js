@@ -1,17 +1,16 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
-import DashboardContent from '../components/DashboardContent';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-const Home = () => {
+const Layout = ({ children }) => {
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
       <Sidebar />
       <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
         <Navbar />
         <div style={{ flexGrow: 1, padding: '20px' }}>
-          <DashboardContent />
+          {children}
         </div>
         <Footer />
       </div>
@@ -19,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Layout;
